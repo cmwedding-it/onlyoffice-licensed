@@ -1,0 +1,25 @@
+services:
+  onlyoffice:
+    container_name: onlyoffice
+    image: cmwedding/onlyoffice-licensed
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - logs:/var/log/onlyoffice
+      - data:/var/www/onlyoffice/Data
+      - lib:/var/lib/onlyoffice
+      - db:/var/lib/postgresql
+      - etc:/etc/onlyoffice
+
+volumes:
+  logs:
+    driver: local
+  data:
+    driver: local
+  lib:
+    driver: local
+  db:
+    driver: local
+  etc:
+    driver: local

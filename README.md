@@ -1,11 +1,10 @@
 # Patched ONLYOFFICE Docs (Community Edition)
 
-[![Docker Image CI](https://github.com/aleho/onlyoffice-ce-docker-license/actions/workflows/docker-image.yml/badge.svg)](https://github.com/aleho/onlyoffice-ce-docker-license/actions/workflows/docker-image.yml)
+[![Docker Image CI](https://github.com/cmwedding-it/onlyoffice-licensed/actions/workflows/docker-image.yml/badge.svg)](https://github.com/cmwedding-it/onlyoffice-licensed/actions/workflows/docker-image.yml)
 
 ## Notes
 
 Please don't ask for setup support. I cannot support all your different setups. Sorry.
-
 Please also don't ask OnlyOffice devs for support if something is broken with this image.
 
 **There will be bugs.**
@@ -56,7 +55,7 @@ podman run \
     --name=onlyoffice \
     --detach \
     --publish=80:80 \
-    docker.io/alehoho/oo-ce-docker-license
+    docker.io/cmwedding/onlyoffice-licensed
 ```
 
 ### Docker CLI
@@ -66,16 +65,16 @@ docker run \
     --name=onlyoffice \
     --detach \
     --publish=80:80 \
-    alehoho/oo-ce-docker-license
+    cmwedding/onlyoffice-licensed
 ```
 
-### docker-compose.yml
+### [docker-compose.yml](./docker-compose.yml)
 
 ```yml
 services:
   onlyoffice:
     container_name: onlyoffice
-    image: alehoho/oo-ce-docker-license
+    image: cmwedding/onlyoffice-licensed
     ports:
       - "80:80"
 ```
@@ -95,7 +94,7 @@ To verify that the container is running successfully open
 ```sh
 buildah build-using-dockerfile \
     --tag=onlyoffice-patched \
-    https://github.com/aleho/onlyoffice-ce-docker-license.git
+    https://github.com/cmwedding/onlyoffice-licensed.git
 ```
 
 ### Docker CLI
@@ -103,7 +102,7 @@ buildah build-using-dockerfile \
 ```sh
 docker build \
     --tag=onlyoffice-patched \
-    https://github.com/aleho/onlyoffice-ce-docker-license.git
+    https://github.com/cmwedding/onlyoffice-licensed.git
 ```
 
 
@@ -115,12 +114,12 @@ services:
     container_name: onlyoffice
     image: onlyoffice-patched
     build:
-      context: https://github.com/aleho/onlyoffice-ce-docker-license.git
+      context: https://github.com/cmwedding/onlyoffice-licensed.git
     …
 ```
 
 
 ## Thanks
 
-This repo was heavily inspired by the works of
+This is a fork of a fork of [aleho/onlyoffice-ce-docker-license](https://github.com/aleho/onlyoffice-ce-docker-license). The original repo was heavily inspired by the works of
 [Zegorax/OnlyOffice-Unlimited](https://github.com/Zegorax/OnlyOffice-Unlimited).

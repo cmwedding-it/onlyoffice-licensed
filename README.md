@@ -48,6 +48,11 @@ Installation using docker-compose recommended.
 [Make sure you're running the newest version of docker and docker-compose.](https://docs.docker.com/engine/install/)
 Replace `secret` with a secret. A 32 character string containing upper and lowercase letters, numbers and special characters is recommended.
 
+You can get the sample docker-compose.yml below by running:
+```sh
+wget https://raw.githubusercontent.com/cmwedding-it/onlyoffice-licensed/main/docker-compose.yml
+```
+
 ```yml
 services:
   onlyoffice:

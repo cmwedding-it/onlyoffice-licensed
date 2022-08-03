@@ -43,32 +43,10 @@ it away are unacceptable for a company presenting itself and their products as
 open source.
 
 
-## Usage
-
-Please refer the the official docs on how to integrate OnlyOffice into your
-setup.
-
-### Podman CLI
-
-```sh
-podman run \
-    --name=onlyoffice \
-    --detach \
-    --publish=80:80 \
-    docker.io/cmwedding/onlyoffice-licensed
-```
-
-### Docker CLI
-
-```sh
-docker run \
-    --name=onlyoffice \
-    --detach \
-    --publish=80:80 \
-    cmwedding/onlyoffice-licensed
-```
-
-### [docker-compose.yml](./docker-compose.yml)
+### Installation
+Installation using docker-compose recommended. 
+[Make sure you're running the newest version of docker and docker-compose.](https://docs.docker.com/engine/install/)
+Replace `secret` with a secret. A 32 character string containing upper and lowercase letters, numbers and special characters is recommended.
 
 ```yml
 services:
@@ -77,46 +55,38 @@ services:
     image: cmwedding/onlyoffice-licensed
     ports:
       - "80:80"
+      - "443:443"
+    volumes:
+      - logs:/var/log/onlyoffice
+      - data:/var/www/onlyoffice/Data
+      - lib:/var/lib/onlyoffice
+      - db:/var/lib/postgresql
+      - etc:/etc/onlyoffice
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=secret
+      - JWT_IN_BODY=true
+      - JWT_HEADER=AuthorizationJwt
+
+volumes:
+  logs:
+    driver: local
+  data:
+    driver: local
+  lib:
+    driver: local
+  db:
+    driver: local
+  etc:
+    driver: local
 ```
 
-### Verify
+## Verify
 
 To verify that the container is running successfully open
 `[server-url]/healthcheck` (has to return `true`) and for the version number open
 `[server-url]/index.html` and check the output of that page or
 `[server-url]/web-apps/apps/api/documents/api.js` and check the header comment.
-
-
-## Build
-
-### Buildah CLI
-
-```sh
-buildah build-using-dockerfile \
-    --tag=onlyoffice-patched \
-    https://github.com/cmwedding/onlyoffice-licensed.git
-```
-
-### Docker CLI
-
-```sh
-docker build \
-    --tag=onlyoffice-patched \
-    https://github.com/cmwedding/onlyoffice-licensed.git
-```
-
-
-### docker-compose.yml
-
-```yml
-services:
-  onlyoffice:
-    container_name: onlyoffice
-    image: onlyoffice-patched
-    build:
-      context: https://github.com/cmwedding/onlyoffice-licensed.git
-    …
-```
 
 
 ## Thanks

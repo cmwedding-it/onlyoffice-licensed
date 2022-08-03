@@ -11,6 +11,11 @@ services:
       - lib:/var/lib/onlyoffice
       - db:/var/lib/postgresql
       - etc:/etc/onlyoffice
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=secret
+      - JWT_IN_BODY=true
+      - JWT_HEADER=AuthorizationJwt
 
 volumes:
   logs:

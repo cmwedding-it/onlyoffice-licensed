@@ -1,7 +1,5 @@
 # Patched ONLYOFFICE Docs (Community Edition)
 
-[![Docker Image CI](https://github.com/cmwedding-it/onlyoffice-licensed/actions/workflows/docker-image.yml/badge.svg)](https://github.com/cmwedding-it/onlyoffice-licensed/actions/workflows/docker-image.yml)
-
 ## Notes
 
 Please don't ask for setup support. I cannot support all your different setups. Sorry.

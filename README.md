@@ -62,9 +62,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - logs:/var/log/onlyoffice
       - data:/var/www/onlyoffice/Data
-      - lib:/var/lib/onlyoffice
       - db:/var/lib/postgresql
       - etc:/etc/onlyoffice
     environment:
@@ -74,16 +72,9 @@ services:
       - JWT_HEADER=AuthorizationJwt
 
 volumes:
-  logs:
-    driver: local
   data:
-    driver: local
-  lib:
-    driver: local
   db:
-    driver: local
   etc:
-    driver: local
 ```
 
 ## Verify

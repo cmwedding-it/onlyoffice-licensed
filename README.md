@@ -20,7 +20,7 @@ This [Dockerfile](./Dockerfile) and patches compile a version of
 OnlyOffice Docs server with mobile editing enabled in the Nextcloud apps for an
 unlimited amount of concurrent users.
 
-The patches provided in this repository only restores basic editing on mobile.
+The patches provided in this repository only restores basic editing on mobile. It also adds a way to use "Picture from storage" on mobile.
 
 It can be integrated into e.g. Nextcloud or ownCloud like the official images.
 

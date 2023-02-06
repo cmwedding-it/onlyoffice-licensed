@@ -84,7 +84,7 @@ To verify that the container is running successfully open
 
 ## Troubleshooting
 
-Problem: It stopped working after an update <br>
+#### Problem: It stopped working after an update <br>
 Delete the compose project, delete the volumes, get the updated compose file.
 Then run
 ```bash
@@ -95,8 +95,7 @@ docker volume rm onlyoffice_data && \
 docker volume rm onlyoffice_etc
 ```
 
-
-Any other problem: open an issue
+#### Any other problem: please open an issue
 
 ## Thanks
 

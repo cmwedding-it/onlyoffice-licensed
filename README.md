@@ -41,7 +41,7 @@ it away are unacceptable for a company presenting itself and their products as
 open source.
 
 
-### Installation
+## Installation
 Installation using docker-compose recommended. 
 [Make sure you're running the newest version of docker and docker-compose.](https://docs.docker.com/engine/install/)
 Replace `secret` with a secret. A 32 character string containing upper and lowercase letters, numbers and special characters is recommended.
@@ -82,6 +82,12 @@ To verify that the container is running successfully open
 `[server-url]/index.html` and check the output of that page or
 `[server-url]/web-apps/apps/api/documents/api.js` and check the header comment.
 
+## Troubleshooting
+
+Problem: It stopped working after an update
+Delete the compose project, delete the volumes, take the updated compose file.
+
+Any other problem: open an issue
 
 ## Thanks
 

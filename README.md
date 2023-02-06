@@ -84,7 +84,7 @@ To verify that the container is running successfully open
 
 ## Troubleshooting
 
-Problem: It stopped working after an update
+Problem: It stopped working after an update <br>
 Delete the compose project, delete the volumes, get the updated compose file.
 Then run
 ```bash

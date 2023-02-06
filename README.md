@@ -47,7 +47,7 @@ Installation using docker-compose recommended.
 Replace `secret` with a secret. A 32 character string containing upper and lowercase letters, numbers and special characters is recommended.
 
 You can get the sample docker-compose.yml below by running:
-```sh
+```bash
 wget https://raw.githubusercontent.com/cmwedding-it/onlyoffice-licensed/main/docker-compose.yml
 ```
 
@@ -85,7 +85,16 @@ To verify that the container is running successfully open
 ## Troubleshooting
 
 Problem: It stopped working after an update
-Delete the compose project, delete the volumes, take the updated compose file.
+Delete the compose project, delete the volumes, get the updated compose file.
+Then run
+```bash
+docker volume rm onlyoffice_lib && \
+docker volume rm onlyoffice_logs && \
+docker volume rm onlyoffice_db && \
+docker volume rm onlyoffice_data && \
+docker volume rm onlyoffice_etc
+```
+
 
 Any other problem: open an issue
 

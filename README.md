@@ -1,4 +1,6 @@
-# Patched ONLYOFFICE Docs (Community Edition)
+# THIS PROJECT IS SEVERLY OUTDATED. PLEASE USE <https://github.com/thomisus/Docker-DocumentServer/pkgs/container/onlyoffice-documentserver-unlimited> INSTEAD
+
+## Patched ONLYOFFICE Docs (Community Edition)
 
 ## Notes
 
